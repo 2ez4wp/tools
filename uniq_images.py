@@ -26,6 +26,7 @@ def uniq_images(rootdir):
     for name in names:
         imgpath = os.path.join(rootdir, name)
         md5file = open(imgpath, "rb")
+
         md5 = hashlib.md5(md5file.read()).hexdigest()
         md5file.close()
         #if md5_dict.has_key(md5):
@@ -42,5 +43,5 @@ def uniq_images(rootdir):
     logfile.close()
     return delnum,len(names)
 
-[delnum,number] = uniq_images("D:\\datasets\\ad_0917\\0918\\0917_after2_big\\slogo")
+[delnum,number] = uniq_images("D:\\datasets\\ad_0917\\ad\\0918big")
 print("total image: %d, delete number: %d\n"%(number,delnum))
